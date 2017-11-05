@@ -5,7 +5,10 @@ module.exports = function (sequelize, DataTypes) {
         name: {
             type: DataTypes.STRING
         },
-        timestamp: {
+        createdAt: {
+            type: DataTypes.DATE
+        },
+        updatedAt: {
             type: DataTypes.DATE
         },
         status: {
@@ -17,14 +20,14 @@ module.exports = function (sequelize, DataTypes) {
         locationType: {
             type: DataTypes.STRING
         },
-        location: {
-            latitude: {
+        longitude: {
+            type: DataTypes.NUMBER
+        },
+        latitude: {
                 type: DataTypes.NUMBER
-            },
-            longitude: {
-                type: DataTypes.NUMBER
-            }
         }
+
+        
     });
 
     Device.sync();
