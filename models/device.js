@@ -2,34 +2,30 @@
 
 module.exports = function (sequelize, DataTypes) {
     const Device = sequelize.define('device', {
+        deviceId: {
+            type: DataTypes.UUID
+        },
         name: {
             type: DataTypes.STRING
-        },
-        timestamp: {
-            type: DataTypes.DATE
         },
         status: {
             type: DataTypes.STRING
         },
-        deviceId: {
-            type: DataTypes.UUID
-        },
         locationType: {
             type: DataTypes.STRING
         },
-        location: {
-            latitude: {
-                type: DataTypes.NUMBER
-            },
-            longitude: {
-                type: DataTypes.NUMBER
-            }
+        locationString: {
+            type: DataTypes.STRING
+        },
+        longitude: {
+            type: DataTypes.FLOAT
+        },
+        latitude: {
+            type: DataTypes.FLOAT
         }
     });
 
     Device.sync();
-
-    //User.sync({force: true});
 
     return Device;
 }

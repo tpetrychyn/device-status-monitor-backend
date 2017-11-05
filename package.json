@@ -21,6 +21,7 @@
     "pg-hstore": "^2.3.2",
     "restful-express-sequelize": "https://github.com/tpetrychyn/RESTful/tarball/master",
     "sequelize": "^4.22.1",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "socket.io": "^1.7.4"
   }
 }
