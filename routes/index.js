@@ -16,6 +16,19 @@ router.put('/api/devices/:deviceId/status', function (req, res, next) {
     res.send(200);
 });
 
+router.get('/api/devices/:deviceId/restart', function (req, res, next) {
+    var params = {
+        status: 'down'
+    };
+    params.deviceId = req.params.deviceId;
+    socket.io.emit('status', params);
+    setTimeout(function() {
+        params.status = 'up'
+        socket.io.emit('status', params);
+    }, 3000);
+    
+    res.send(200);
+});
 
 router.put('/test', function (req, res, next) {
     console.log(req.body.status);
