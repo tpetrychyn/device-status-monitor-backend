@@ -22,8 +22,10 @@ module.exports = function (sequelize, DataTypes) {
         },
         latitude: {
             type: DataTypes.FLOAT
+        },
+        version: {
+            type: DataTypes.FLOAT
         }
-
         
     });
 

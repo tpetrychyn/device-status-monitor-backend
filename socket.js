@@ -13,7 +13,6 @@ module.exports = {
             socket.on('register', function (data) {
                 console.log(data)
                 DeviceService.createOrUpdateDevice(data);
-                io.emit('status', { 'id': 0 });
             });
 
             socket.on('status', function (data) {
